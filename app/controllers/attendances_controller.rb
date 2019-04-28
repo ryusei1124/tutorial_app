@@ -13,4 +13,11 @@ class AttendancesController < ApplicationController
     end
     redirect_to @user
   end
+  
+  def edit
+    @user = User.find(params[:id])
+    @first_day = first_day(params[:date])
+    @last_day = @first_day.end_of_month
+    @dates = user_attendances_month_date
+  end
 end
