@@ -93,7 +93,7 @@ p {
 table {
   width: 100%;
   vertical-align: middle;
-  text-align: center;  
+  text-align: center;
 }
 
 th {
@@ -147,4 +147,8 @@ input, textarea, select, .uneditable-input {
   .btn-primary{
     margin-right: 10px;
   }
+}
+
+.table-bordered{
+  margin: 10px 0;
 }
