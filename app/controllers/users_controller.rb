@@ -46,6 +46,14 @@ class UsersController < ApplicationController
   
   def index
     @users = User.paginate(page: params[:page])
+    if params[:q] && params[:q].reject { |key, value| value.blank? }.present?
+      @q = User.ransack(search_params, activated_true: true)
+      @title = "検索結果"
+    else
+      @q = User.ransack(activated_true: true)
+      @title = "ユーザー一覧"
+    end
+    @users = @q.result.paginate(page: params[:page])
   end
   
   def destroy
@@ -98,5 +106,10 @@ class UsersController < ApplicationController
     # 管理者かどうか確認
     def admin_user
       redirect_to(root_url) unless current_user.admin?
+    end
+    
+    #検索機能
+    def search_params
+      params.require(:q).permit(:name_cont)
     end
 end

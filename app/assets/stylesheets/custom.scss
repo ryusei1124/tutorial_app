@@ -141,6 +141,7 @@ input, textarea, select, .uneditable-input {
 
 .btn-attendances-update {
   padding-top: 20px;
+  padding-bottom: 20px;
   display: flex;
   width: 30%;
   margin: auto;
@@ -151,4 +152,26 @@ input, textarea, select, .uneditable-input {
 
 .table-bordered{
   margin: 10px 0;
+}
+
+/* 検索機能 */
+.search_form {
+  overflow: auto;
+  margin: 10px;
+  float: right;
+  .input-group {
+    width: 300px;
+    .form-control {
+      width: 250px;
+    }
+    .btn {
+      width: 50px;
+    }
+  }
+}
+
+p{
+  color: black;
+  font-size: 20px;
+  text-align: center;
 }
