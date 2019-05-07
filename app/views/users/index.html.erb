@@ -1,5 +1,5 @@
-<% provide(:title, '一覧') %>
-<h1>ユーザ一覧</h1>
+<% provide(:title, @title) %>
+<h1><%= @title %></h1>
 
 <div class="row">
   <div class="search_form">
@@ -14,7 +14,7 @@
     <%= render @users %>
   </ul>
 <% else %>
-  <p>
+  <p class="search">
     ユーザーが見つかりませんでした。<br>
     探しているユーザー名を確認してください。
   </p>

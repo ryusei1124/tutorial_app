@@ -48,9 +48,9 @@
         <% 
           css_class = 
           case %w{日 月 火 水 木 金 土}[day.worked_on.wday]
-          when '土' 
+          when '土' then
             'text-primary'
-          when '日' 
+          when '日' then
             'text-danger'
           end
         %>
